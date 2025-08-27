@@ -1,0 +1,107 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1c1c1c, #2e2e2e, #3d3d3d);
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Header */
+.main-header {
+  text-align: center;
+  padding: 2rem;
+  background: #111;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+/* Intro (sobre negocio y catálogo) */
+.intro {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  background: #222;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.intro-left, .intro-right {
+  flex: 1;
+}
+
+.intro-left h2, .intro-right h2 {
+  color: #f0b429;
+  margin-bottom: 1rem;
+}
+
+.download-btn {
+  display: inline-block;
+  background: #f0b429;
+  color: #111;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background: #d89d24;
+}
+
+/* Productos */
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.producto {
+  background: #2a2a2a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+}
+
+.producto img {
+  max-width: 50%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.producto h3 {
+  margin-bottom: 0.5rem;
+  color: #f0b429;
+}
+
+.producto p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.producto button {
+  background: #f0b429;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #111;
+  transition: background 0.3s ease;
+}
+
+.producto button:hover {
+  background: #d89d24;
+}
