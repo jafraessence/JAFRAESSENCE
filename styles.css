@@ -203,3 +203,40 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Menú */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #222;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #ff4081; /* Ejemplo de color llamativo */
+}
+
+/* Espacio para que el contenido no se esconda bajo el menú */
+section {
+  padding: 80px 20px;
+  margin-top: 60px;
+}
