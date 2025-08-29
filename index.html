@@ -7,49 +7,42 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header principal -->
+  <!-- Header con logo y menú lateral -->
   <header class="main-header">
-    <h1>JAFRA ESSENCE.</h1>
+    <div class="header-left">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+      <nav class="sidebar" id="sidebar">
+  <ul>
+    <li><a href="#entregas">Perfumes para entregas inmediatas</a></li>
+    <li><a href="#novedades">Novedades del mes</a></li>
+    <li><a href="#mujeres">Perfumes del mes para mujeres</a></li>
+    <li><a href="#hombres">Perfumes del mes para hombres</a></li>
+  </ul>
+</nav>
+
+
+    </div>
+    <div class="header-right">
+      <img src="LOGOJAFRA.png" alt="JAFRA ESSENCE Logo" class="logo">
+    </div>
   </header>
-<!-- Menú de navegación -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="#entregas">Perfumes para entregas inmediatas</a></li>
-      <li><a href="#mujeres">Perfumes del mes para mujeres</a></li>
-      <li><a href="#hombres">Perfumes del mes para hombres</a></li>
-    </ul>
-  </nav>
-  
-  <!-- Sección introductoria -->
+
+  <!-- Introducción -->
   <section class="intro">
     <div class="intro-left">
       <h2>Bienvenido a JAFRA ESSENCE</h2>
-      <p>
-"Tu esencia, tu mejor versión"
-<br>
-</br>
-En esta página encontrarás una selección especial de perfumes disponibles para entrega inmediata, además de recomendaciones exclusivas del catálogo vigente, en este caso: Septiembre.
-<br>
-</br>
-Este mes, el catálogo trae propuestas únicas tanto para damas como para caballeros. Sin embargo, queremos destacar la sección masculina, ya que aquí descubrirás los perfumes más valorados y aclamados de JAFRA para hombres, ideales para quienes buscan elegancia, personalidad y distinción en cada ocasión.
-<br>
-</br>
-Eso sí, las fragancias femeninas no se quedan atrás: cada una ofrece un aroma inconfundible y sofisticado, como solo JAFRA sabe crear.
-
-✨ Explora, elige y deja que tu esencia hable por ti. ✨
-      </p>
+      <p>"Tu esencia, tu mejor versión". Explora nuestra selección de perfumes del mes y descubre fragancias únicas para hombres y mujeres.</p>
     </div>
     <div class="intro-right">
-      <h2>Descargar catálogo de Septiembre (aun no disponible)</h2>
-      <hr><br>
-      <a href="catalogo.pdf" class="download-btn" download>📥 Descargar</a><br><br>
-      <a href="https://wa.me/message/RQAHXK6IGGGLB1?src=qr" class="download-btn" download>📥 COMUNICATE CONMIGO PRESIONANDO ESTE BOTON</a><br><br>
-      <a href="https://whatsapp.com/channel/0029Vb6RtBr2UPBHIFFWMz34" class="download-btn" download>📥 UNETE A NUESTRO CANAL DE WHATSAPP</a>
+      <a href="catalogo.pdf" class="download-btn" download>📥 Descargar Catálogo</a><br><br>
+      <a href="https://wa.me/message/RQAHXK6IGGGLB1?src=qr" class="download-btn">📥 Comunícate con nosotros</a><br><br>
+      <a href="https://whatsapp.com/channel/0029Vb6RtBr2UPBHIFFWMz34" class="download-btn">📥 Únete a nuestro canal de WhatsApp</a>
     </div>
   </section>
 
-  <!-- Contenedor de productos -->
-   <section id="entregas">
+  <!-- Sección: Perfumes para entregas inmediatas -->
+  <section id="entregas">
    <h2>Perfumes para entregas inmediatas.</h2>
    </section>
 
@@ -99,8 +92,32 @@ Eso sí, las fragancias femeninas no se quedan atrás: cada una ofrece un aroma 
     </div>
   </section>
 
-  <!-- Contenedor de productos mujer-->
-   <section id="mujeres">
+  <!-- Sección: Novedades del mes -->
+  <section id="novedades">
+    <h2>Novedades del mes</h2>
+    <p>Descubre los perfumes recién lanzados este mes, con aromas exclusivos que te harán destacar y sentir tu esencia única.</p>
+  </section>
+  <section class="productos">
+    <div class="producto">
+      <img src="PERFUMES MUJERES/Navigo Femme.png" alt="Navigo Femme"> 
+      <h3>Navigo Femme</h3>
+      <hr>
+      <p>Fragancia que evoca libertad y aventura. Ideal para mujeres dinámicas.</p>
+      <button onclick="contactarWhatsApp('Navigo Femme')">Si te interesa da click aquí y envía mensaje.</button> 
+    </div>
+
+    <div class="producto">
+      <img src="PERFUMES HOMBRES/Victus.png" alt="Victus"> 
+      <h3>Victus Agua de Tocador 100ml</h3>
+      <hr>
+      <p>✨ Cítrico y fougère verde<br>🍋 Limón, lavanda y ámbar<br>💼 Hombre confiable y moderno<br>💲520 pesos</p>
+      <button onclick="contactarWhatsApp('Victus')">Si te interesa da click aquí y envía mensaje.</button> 
+    </div>
+  </section>
+
+  <!-- Sección: Perfumes del mes para mujeres -->
+
+  <section id="mujeres">
 
 
    <h1>Perfumes del mes para mujeres</h1>
@@ -226,9 +243,9 @@ Aquí encontrarás perfumes que combinan dulzura, frescura y sofisticación, ide
   </section>
 
 
-  <!-- Contenedor de productos hombre-->
-   <!-- Sección introductoria -->
-    <section id="hombres">
+  <!-- Sección: Perfumes del mes para hombres -->
+  
+  <section id="hombres">
   <h1>Perfumes del mes para hombres</h1>
   <p>En esta sección descubrirás los aromas más destacados de JAFRA para caballeros, seleccionados especialmente del catálogo de septiembre. Estos perfumes no solo representan elegancia y personalidad, sino que también están pensados para acompañarte en cada momento importante de tu día.</p>
   <br>
@@ -336,6 +353,18 @@ Aquí encontrarás perfumes que combinan dulzura, frescura y sofisticación, ide
 
 
     </section>
+
   <script src="script.js"></script>
+  <script>
+    // Menú plegable
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('active');
+    }
+
+    // Función de WhatsApp (puedes definirla en script.js)
+    function contactarWhatsApp(producto){
+      window.open('https://wa.me/message/RQAHXK6IGGGLB1?text=Hola,%20quiero%20información%20sobre%20' + producto, '_blank');
+    }
+  </script>
 </body>
 </html>
