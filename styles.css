@@ -1,242 +1,269 @@
-/* Reset */
+/* === RESET GENERAL === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Arial", sans-serif;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #1c1c1c, #2e2e2e, #3d3d3d);
+  background: #111;
   color: #fff;
   line-height: 1.6;
+  padding-top: 80px; /* espacio para el header fijo */
 }
 
-/* Header */
-.main-header {
-  text-align: center;
-  padding: 2rem;
-  background: #111;
-  color: #fff;
-  letter-spacing: 2px;
-}
-
-/* Intro (sobre negocio y catálogo) */
-.intro {
+/* === HEADER === */
+.header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 2rem;
-  background: #222;
-  margin-bottom: 2rem;
-  gap: 2rem;
-}
-
-.intro-left, .intro-right {
-  flex: 1;
-}
-
-.intro-left h2, .intro-right h2 {
-  color: #f0b429;
-  margin-bottom: 1rem;
-}
-
-.download-btn {
-  display: inline-block;
-  background: #f0b429;
-  color: #111;
-  padding: 0.8rem 1.2rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.download-btn:hover {
-  background: #d89d24;
-}
-
-/* Productos */
-.productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.producto {
-  background: #2a2a2a;
-  padding: 1.5rem;
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.producto:hover {
-  transform: translateY(-5px);
-}
-
-.producto img {
-  max-width: 55%;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.producto h3 {
-  margin-bottom: 0.5rem;
-  color: #f0b429;
-}
-
-.producto p {
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.producto button {
-  background: #f0b429;
-  border: none;
-  padding: 0.7rem 1.2rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  color: #111;
-  transition: background 0.3s ease;
-}
-
-.producto button:hover {
-  background: #d89d24;
-}
-
-/* Responsividad general */
-@media (max-width: 1024px) {
-  .intro {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .intro-left, .intro-right {
-    width: 100%;
-  }
-
-  .intro-left h2, .intro-right h2 {
-    font-size: 1.5rem;
-  }
-
-  .download-btn {
-    width: 100%;
-    text-align: center;
-    margin-top: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .main-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .producto img {
-    max-width: 70%;
-  }
-
-  .producto {
-    padding: 1rem;
-  }
-
-  .producto button {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 0.9rem;
-  }
-
-  .intro-left h2, .intro-right h2 {
-    font-size: 1.3rem;
-  }
-
-  .producto img {
-    max-width: 90%;
-  }
-
-  .producto h3 {
-    font-size: 1rem;
-  }
-
-  .producto p {
-    font-size: 0.85rem;
-  }
-
-  .producto button {
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
-  }
-}
-
-/* Menú */
-.menu {
-  position: sticky;
-  top: 0;
   background: #111;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  z-index: 1000;
-}
-
-.menu a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-  padding-bottom: 4px;
-}
-
-.menu a:hover {
-  color: #f0b429;
-  border-bottom: 2px solid #f0b429;
-}
-
-/* Scroll suave */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Menú */
-.navbar {
-  position: fixed;
+  padding: 1rem 2rem;
+  position: fixed; /* siempre visible */
   top: 0;
   left: 0;
   width: 100%;
-  background: #222;
-  padding: 10px 0;
   z-index: 1000;
+  border-bottom: 2px solid #f0b429;
 }
 
-.navbar ul {
+.logo img {
+  height: 50px;
+}
+
+.header h1 {
+  color: #f0b429;
+  font-size: 1.5rem;
+}
+
+/* === BOTÓN HAMBURGUESA === */
+.hamburger {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #f0b429;
+  display: block; /* visible en móviles */
+}
+
+/* === NAVBAR === */
+.navbar {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: #222;
+  border-radius: 8px;
+  display: none; /* oculto por defecto */
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+}
+
+.navbar.active {
+  display: block;
+}
+
+.navbar .menu {
   list-style: none;
+  padding: 1rem;
   display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .navbar a {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 
-.navbar a:hover {
-  color: #ff4081; /* Ejemplo de color llamativo */
+.navbar a:hover,
+.navbar a.active {
+  color: #f0b429;
 }
 
-/* Espacio para que el contenido no se esconda bajo el menú */
-section {
-  padding: 80px 20px;
-  margin-top: 60px;
+/* === NAVBAR DESKTOP === */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .navbar {
+    display: block !important;
+    position: static;
+    background: none;
+    box-shadow: none;
+  }
+
+  .navbar .menu {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+/* === SECCIÓN INTRO === */
+.intro {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.intro h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f0b429;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  color: #ddd;
+  max-width: 600px;
+  margin: auto;
+}
+
+.intro-botones {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.intro-botones .btn {
+  background: #f0b429;
+  color: #111;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.intro-botones .btn:hover {
+  background: #d89d24;
+}
+
+@media (min-width: 768px) {
+  .intro-botones {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* === CUADROS PORTAL === */
+.portal {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.cuadro {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+}
+
+.cuadro a {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  background: rgba(0,0,0,0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.cuadro:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.6);
+}
+
+.cuadro a:hover {
+  background: rgba(240,180,41,0.8);
+  color: #111;
+}
+
+/* === BANNER DE ENTREGAS === */
+.banner-entregas {
+  background: linear-gradient(to right, #f0b429, #d89d24);
+  color: #111;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+}
+
+.banner-entregas h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.banner-entregas p {
+  font-size: 1.2rem;
+}
+
+/* === SECCIÓN PRODUCTOS === */
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.producto {
+  background: #222;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.6);
+}
+
+.producto img {
+  max-width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.producto h3 {
+  color: #f0b429;
+  margin: 0.5rem 0;
+}
+
+.producto hr {
+  border: 1px solid #444;
+  margin: 0.5rem 0;
+}
+
+.producto p {
+  margin: 0.5rem 0 1rem;
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+.producto button {
+  background: #f0b429;
+  color: #111;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.producto button:hover {
+  background: #d89d24;
 }
