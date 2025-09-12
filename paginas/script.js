@@ -25,7 +25,14 @@ function contactarWhatsApp(producto) {
   window.open(url, "_blank");
 }
 
-// === ALERT AL CARGAR ===
-window.onload = function () {
-  alert("⚠️ Bienvenido a Jafra Essence");
-};
+// script.js
+// Obtenemos el año actual
+  const year = new Date().getFullYear();
+
+  // Texto del mensaje
+  const mensaje = "✨ Bienvenido/a a JAFRA ESSENCE ✨\n\n" +
+                  "Esta página fue creada por Arturo\n" +
+                  "© " + year + " JAFRA ESSENCE. Todos los derechos reservados.";
+
+  // Mostramos el alert
+  alert(mensaje);
