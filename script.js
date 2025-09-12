@@ -1,20 +1,38 @@
-// Menu hamburguesa
-const hamburger = document.getElementById("hamburger");
-const navbar = document.getElementById("navbar");
+// === MENÚ HAMBURGUESA ===
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const navbar = document.getElementById("navbar");
 
-// abrir/cerrar con click
-hamburger.addEventListener("click", () => {
-  navbar.classList.toggle("active");
+  // Abrir/cerrar menú al dar clic en el botón hamburguesa
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation(); // evita que se cierre inmediatamente
+    navbar.classList.toggle("active");
+  });
+
+  // Cerrar el menú si se hace clic fuera
+  document.addEventListener("click", (e) => {
+    if (navbar.classList.contains("active") && !navbar.contains(e.target) && e.target !== hamburger) {
+      navbar.classList.remove("active");
+    }
+  });
 });
 
-// cerrar si clickeo fuera
-document.addEventListener("click", (e) => {
-  if (!hamburger.contains(e.target) && !navbar.contains(e.target)) {
-    navbar.classList.remove("active");
-  }
-});
+// === CONTACTAR WHATSAPP ===
+function contactarWhatsApp(producto) {
+  const numero = "7442073056"; // tu número
+  const mensaje = `Hola, me interesa el ${producto}. ¿Podrías darme más información?`;
+  const url = `https://wa.me/52${numero}?text=${encodeURIComponent(mensaje)}`;
+  window.open(url, "_blank");
+}
 
 // script.js
-window.onload = function () {
-  alert("⚠️ BIENVENIDO A JAFRA ESSENCE, ESTA PAGINA AUN SE ENCUENTRA EN DESARROLLO,LA PAGINA SE ACTUALIZO PARA TENER UN DISEÑO MAS LIMPIO PODIENDO ENTRAR A SECCIONES DISPONIBLES, DESDE EL MENU QUE APARECE EN PANTALLA O BIEN PRECIONANDO EN MEDIO DE LAS FOTOS");
-};
+// Obtenemos el año actual
+  const year = new Date().getFullYear();
+
+  // Texto del mensaje
+  const mensaje = "✨ Bienvenido/a a JAFRA ESSENCE ✨\n\n" +
+                  "Esta página fue creada por Arturo\n" +
+                  "© " + year + " JAFRA ESSENCE. Todos los derechos reservados.";
+
+  // Mostramos el alert
+  alert(mensaje);
